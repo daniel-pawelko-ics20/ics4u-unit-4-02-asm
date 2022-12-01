@@ -17,9 +17,9 @@ STDOUT      equ 1   ; standard output
 
 
 section .bss
-    inp_len equ     3       ; 3 byte for user input, 3 bytes because need to
+    inpLen equ     3        ; 3 byte for user input, 3 bytes because need to
                             ;   make room for line feed at the end of input(\n)
-    inp     resb    inpLen; buffer for user input
+    inp     resb    inpLen  ; buffer for user input
 
 section .data
     message: db "Please input a 2 digit number: "
@@ -68,8 +68,8 @@ _start:
         syscall
 
         ; SYS_EXIT SUCCESS
-        mov rbx, 0        ;
-        mov rax, SYS_EXIT ;
+        mov rbx, 0        
+        mov rax, SYS_EXIT 
         syscall
 
 
